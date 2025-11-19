@@ -1,0 +1,17 @@
+source,target
+Alice,Bob
+Alice,Charlie
+Bob,Charlie
+Charlie,Diana
+Diana,Eve
+Bob,Diana
+Frank,Eve
+Eve,Ian
+Diana,Ian
+Ian,Grace
+Grace,Hannah
+Hannah,Jack
+Grace,Jack
+Charlie,Frank
+Alice,Eve
+Bob,Jack
