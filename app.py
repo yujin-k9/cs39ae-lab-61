@@ -37,12 +37,26 @@ with open(html_path, "r") as f:
 st.components.v1.html(graph_html, height=600, scrolling=True)
 
 st.subheader("Degree centrality (descending order)")
+st.markdown(
+    "<p style='color: gray;'>Shows how many direct connections a person has, indicating how strongly they are linked within the network.</p>",
+    unsafe_allow_html=True
+)
 st.dataframe(degree_df)
 
 st.subheader("Betweenness centrality (descending order)")
+st.markdown(
+    "<p style='color: gray;'>Shows how often a person lies on the shortest paths between others, indicating how much they act as a bridge in the network.</p>",
+    unsafe_allow_html=True
+)
+
 st.dataframe(bet_df)
 
 st.subheader("Closeness centrality (descending order)")
+st.markdown(
+    "<p style='color: gray;'>Shows how quickly a person can reach everyone else in the network, indicating how centrally they are positioned.</p>",
+    unsafe_allow_html=True
+)
+
 st.dataframe(close_df)
 
 st.subheader("Community Detection")
