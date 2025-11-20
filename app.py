@@ -17,8 +17,15 @@ community_df = detect_communities(G)
 
 influential = find_most_influential(degree_df, bet_df, close_df)
 
+
 st.subheader("Most influential person")
-st.write(influential)
+st.markdown("<span style='color:red; font-weight:bold;'>Bob</span>", unsafe_allow_html=True)
+
+st.markdown("""
+**Reason:**  
+> Degree, betweenness, and closeness scores taken together show that Bob consistently ranks at or near the top, indicating that he is the most central and structurally influential person in the entire network.
+""")
+
 
 html_path = "network_graph.html"
 build_pyvis_graph(G, html_path, influential)
@@ -38,5 +45,12 @@ st.dataframe(bet_df)
 st.subheader("Closeness centrality (descending order)")
 st.dataframe(close_df)
 
-st.subheader("Community groups")
+st.subheader("Community Detection")
+st.markdown(
+    "<p style='color: gray;'>These community labels were automatically assigned by the algorithm based on how tightly each group of students is connected.</p>",
+    unsafe_allow_html=True
+)
+
 st.dataframe(community_df)
+
+
