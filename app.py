@@ -21,20 +21,21 @@ st.subheader("Most influential person")
 st.write(influential)
 
 html_path = "network_graph.html"
-build_pyvis_graph(G, html_path)
+build_pyvis_graph(G, html_path, influential)
+
 
 st.subheader("Network graph")
 with open(html_path, "r") as f:
     graph_html = f.read()
 st.components.v1.html(graph_html, height=600, scrolling=True)
 
-st.subheader("Degree centrality")
+st.subheader("Degree centrality (descending order)")
 st.dataframe(degree_df)
 
-st.subheader("Betweenness centrality")
+st.subheader("Betweenness centrality (descending order)")
 st.dataframe(bet_df)
 
-st.subheader("Closeness centrality")
+st.subheader("Closeness centrality (descending order)")
 st.dataframe(close_df)
 
 st.subheader("Community groups")
